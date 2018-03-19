@@ -7,6 +7,14 @@ Expand the name of the chart.
 {{- end -}}
 
 {{/*
+Create a default fully qualified app role.
+*/}}
+{{- define "cronus.role" -}}
+{{- $name := default "cron-event-provider" .Values.roleOverride -}}
+{{- printf "%s-%s" .Release.Name $name -}}
+{{- end -}}
+
+{{/*
 Create a default fully qualified app name.
 We truncate at 63 chars because some Kubernetes name fields are limited to this (by the DNS naming spec).
 */}}

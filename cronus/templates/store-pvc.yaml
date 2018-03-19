@@ -5,6 +5,7 @@ metadata:
   name: {{ template "cronus.fullname" . }}
   labels:
     app: {{ template "cronus.fullname" . }}
+    role: {{ template "cronus.role" . }}
     chart: {{ .Chart.Name }}-{{ .Chart.Version | replace "+" "_" }}
     release: {{ .Release.Name }}
     heritage: {{ .Release.Service }}

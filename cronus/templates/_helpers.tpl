@@ -10,8 +10,7 @@ Expand the name of the chart.
 Create a default fully qualified app role.
 */}}
 {{- define "cronus.role" -}}
-{{- $name := default "cron-event-provider" .Values.roleOverride -}}
-{{- printf "%s-%s" .Release.Name $name -}}
+{{- default "trigger-cron" .Values.roleOverride -}}
 {{- end -}}
 
 {{/*

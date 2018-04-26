@@ -19,17 +19,20 @@ data:
       "kind": "codefresh",
       "service-url": "http://{{ template "cronus.fullname" . }}:{{ .Values.service.externalPort }}",
       "uri-template": "cron:codefresh:{{"{{"}}expression{{"}}"}}:{{"{{"}}message{{"}}"}}",
-      "uri-regex": "^cron:codefresh:@yearly|@annually|@montly|@weekly|@daily|@midnight|@hourly|([a-zA-Z0-9*/,-?]+\\s?){6,7}:[a-zA-Z0-9_-]{2,64}$",
+      "uri-regex": "^cron:codefresh:@yearly|@annually|@montly|@weekly|@daily|@midnight|@hourly|([a-zA-Z0-9*/,-?]+\\s?){6,7}:[a-zA-Z0-9_+\s-#?.:]{2,128}$",
+      "help-url": "https://codefresh.io/docs/docs/pipeline-triggers/configure-dockerhub-trigger/",
       "config": [{
               "name": "expression",
               "type": "cron",
+              "help": "6 terms cron expression",
               "validator": "^@yearly|@annually|@montly|@weekly|@daily|@midnight|@hourly|([a-zA-Z0-9*/,-?]+\\s?){6,7}$",
               "required": true
           },
           {
               "name": "message",
               "type": "string",
-              "validator": "^[a-zA-Z0-9_-]{2,64}$",
+              "help": "text to send with each trigger",
+              "validator": "^[a-zA-Z0-9_+\s-#?.:]{2,128}$",
               "required": true
           }
       ]

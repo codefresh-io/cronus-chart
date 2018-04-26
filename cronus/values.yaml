@@ -3,11 +3,14 @@
 # Declare variables to be passed into your templates.
 image:
   repository: codefresh/cronus
-  tag: 0.1
+  tag: 0.2
   pullPolicy: Always
 
 # set log level
 logLevel: debug
+
+# true - set log format to Codefresh JSON
+logJSON: false
 
 # set event handler type and kind
 event:

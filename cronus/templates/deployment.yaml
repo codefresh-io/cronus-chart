@@ -12,6 +12,8 @@ spec:
   replicas: 1
   template:
     metadata:
+      annotations:
+        checksum/config: {{ include (print $.Template.BasePath "/configmap.yaml") . | sha256sum }}
       labels:
         app: {{ template "cronus.name" . }}
         role: {{ template "cronus.role" . }}

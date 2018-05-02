@@ -33,7 +33,7 @@ store:
 #cronus backup cronjob
 cronjob:
   image: codefresh/cronus-backup
-  tag: 0.1.1
+  tag: 0.1.2
 
 backup:
   enabled: false

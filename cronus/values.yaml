@@ -29,3 +29,8 @@ service:
 # BoltDb store size
 store:
   size: 1Gi
+
+#cronus backup cronjob
+cronjob:
+  image: codefresh/cronus-backup
+  tag: 0.1.1

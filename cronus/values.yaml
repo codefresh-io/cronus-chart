@@ -34,3 +34,7 @@ store:
 cronjob:
   image: codefresh/cronus-backup
   tag: 0.1.1
+
+backup:
+  enabled: false
+  env: staging

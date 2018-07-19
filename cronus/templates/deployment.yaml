@@ -13,7 +13,7 @@ spec:
   replicas: 1
   selector:
     matchLabels:
-      app: app: {{ template "cronus.name" . }}
+      app: {{ template "cronus.name" . }}
   template:
     metadata:
       annotations:

@@ -38,3 +38,6 @@ cronjob:
 backup:
   enabled: false
   env: staging
+
+# Storage Class name if not default
+#storageClass: {}

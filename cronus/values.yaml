@@ -41,3 +41,6 @@ backup:
 
 # Storage Class name if not default
 #storageClass: {}
+
+## Use existing volume claim name
+# pvcName:

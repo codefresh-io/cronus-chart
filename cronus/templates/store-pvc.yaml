@@ -1,3 +1,4 @@
+{{- if not .Values.pvcName }}
 ---
 kind: PersistentVolumeClaim
 apiVersion: v1
@@ -18,3 +19,4 @@ spec:
   resources:
     requests:
       storage: {{ .Values.store.size }}
+{{- end }}      

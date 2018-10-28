@@ -29,7 +29,11 @@ spec:
       volumes:
         - name: boltdb-store
           persistentVolumeClaim:
+          {{- if .Values.pvcName }}
+            claimName: {{ .Values.pvcName }}
+          {{- else }}
             claimName: {{ template "cronus.fullname" . }}
+          {{- end }}
       containers:
         - name: {{ .Chart.Name }}
           image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"

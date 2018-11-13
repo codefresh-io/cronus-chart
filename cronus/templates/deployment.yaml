@@ -10,6 +10,8 @@ metadata:
     release: {{ .Release.Name }}
     heritage: {{ .Release.Service }}
 spec:
+  strategy:
+    type: Recreate
   replicas: 1
   selector:
     matchLabels:

@@ -13,5 +13,5 @@ sources:
   - https://github.com/codefresh-io/cronus
 maintainers: # (optional)
   - name: Codefresh Authors
-    email: dev@codefres.io
+    email: dev@codefresh.io
 appVersion: 0.2

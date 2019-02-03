@@ -1,4 +1,7 @@
-{{- if not .Values.pvcName }}
+{{- if not (include "cronus.existingPvc" . ) -}}
+
+{{- $storageClass :=  ( include "cronus.storageClass" . ) -}}
+{{- $storageSize :=  ( include "cronus.storageSize" . ) -}}
 ---
 kind: PersistentVolumeClaim
 apiVersion: v1
@@ -13,10 +16,10 @@ metadata:
 spec:
   accessModes:
     - ReadWriteOnce
-  {{- if .Values.storageClass }}
-  storageClassName: {{ .Values.storageClass | quote }}
+  {{- if $storageClass }}
+  storageClassName: {{ $storageClass | quote }}
   {{- end }}
   resources:
     requests:
-      storage: {{ .Values.store.size }}
+      storage: {{ $storageSize }}
 {{- end }}      
